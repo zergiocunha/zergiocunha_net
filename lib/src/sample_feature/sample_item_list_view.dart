@@ -13,6 +13,7 @@ class SampleItemListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       // To work with lists that may contain a large number of items, it’s best
       // to use the ListView.builder constructor.
       //
@@ -33,7 +34,7 @@ class SampleItemListView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 410,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(20),
@@ -45,7 +46,7 @@ class SampleItemListView extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(width: 20),
-                          Container(
+                          SizedBox(
                             height: 380,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -101,7 +102,8 @@ class SampleItemListView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              _buildRichText(isWideScreen, 400, 300),
+                              _buildRichText(
+                                  isWideScreen, constraints.maxWidth - 50, 300),
                             ],
                           ),
                         ],
