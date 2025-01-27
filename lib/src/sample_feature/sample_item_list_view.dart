@@ -151,15 +151,6 @@ class SampleItemListView extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            // Row(
-                            //   mainAxisSize: MainAxisSize.min,
-                            //   mainAxisAlignment: MainAxisAlignment.center,
-                            //   crossAxisAlignment: CrossAxisAlignment.center,
-                            //   children: [
-                            //     _buildRichText(isWideScreen,
-                            //         constraints.maxWidth - 50, 300),
-                            //   ],
-                            // ),
                           ],
                         ),
                       ),
