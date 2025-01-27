@@ -22,54 +22,79 @@ class SampleItemListView extends StatelessWidget {
               child: isWideScreen
                   ? Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                      child: Column(
                         children: [
-                          SizedBox(
-                            height: 410,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.asset(
-                                'assets/images/man_coding.jpg',
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Under Construction",
+                                style: GoogleFonts.comfortaa(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
+                              const SizedBox(width: 20),
+                              const Icon(
+                                Icons.construction,
+                                color: Colors.white,
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 20),
-                          SizedBox(
-                            height: 380,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        child: Image.asset(
-                                          'assets/images/profile.jpg',
-                                          fit: BoxFit.cover,
-                                          height: 80,
-                                          width: 80,
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 410,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.asset(
+                                    'assets/images/man_coding.jpg',
+                                  ),
                                 ),
-                                const SizedBox(height: 10),
-                                Row(
+                              ),
+                              const SizedBox(width: 20),
+                              SizedBox(
+                                height: 380,
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    _buildRichText(isWideScreen, 200, 300),
+                                    Row(
+                                      children: [
+                                        CircleAvatar(
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            child: Image.asset(
+                                              'assets/images/profile.jpg',
+                                              fit: BoxFit.cover,
+                                              height: 80,
+                                              width: 80,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    const SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        _buildRichText(isWideScreen, 200, 300),
+                                      ],
+                                    ),
                                   ],
                                 ),
-                              ],
-                            ),
-                          )
+                              )
+                            ],
+                          ),
                         ],
                       ),
                     )
@@ -78,6 +103,25 @@ class SampleItemListView extends StatelessWidget {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Under Construction",
+                                  style: GoogleFonts.comfortaa(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(width: 20),
+                                const Icon(
+                                  Icons.construction,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 20),
                             FadeInDown(
                               config: BaseAnimationConfig(
                                 delay: 1000.ms,
