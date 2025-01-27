@@ -1,8 +1,7 @@
+import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-import 'package:google_fonts/google_fonts.dart';
-
-// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     super.key,
@@ -14,12 +13,6 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      // To work with lists that may contain a large number of items, it’s best
-      // to use the ListView.builder constructor.
-      //
-      // In contrast to the default ListView constructor, which requires
-      // building all Widgets up front, the ListView.builder constructor lazily
-      // builds Widgets as they’re scrolled into view.
       body: LayoutBuilder(
         builder: (context, constraints) {
           bool isWideScreen = constraints.maxWidth >= 750;
@@ -40,8 +33,6 @@ class SampleItemListView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                               child: Image.asset(
                                 'assets/images/man_coding.jpg',
-                                // fit: BoxFit.cover,
-                                // height: 700,
                               ),
                             ),
                           ),
@@ -84,29 +75,49 @@ class SampleItemListView extends StatelessWidget {
                     )
                   : Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: ListView(
-                        // mainAxisSize: MainAxisSize.min,
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.asset('assets/images/profile.jpg',
-                                fit: BoxFit.cover,
-                                // width: 200,
-                                height: 500),
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              _buildRichText(
-                                  isWideScreen, constraints.maxWidth - 50, 300),
-                            ],
-                          ),
-                        ],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            FadeInDown(
+                              config: BaseAnimationConfig(
+                                delay: 1000.ms,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child:
+                                      Image.asset('assets/images/profile.jpg',
+                                          fit: BoxFit.cover,
+                                          // width: 200,
+                                          height: 700),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            FadeInRight(
+                              config: BaseAnimationConfig(
+                                curves: Curves.easeInOutCubicEmphasized,
+                                delay: 2000.ms,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    _buildRichText(isWideScreen,
+                                        constraints.maxWidth - 50, 300),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            // Row(
+                            //   mainAxisSize: MainAxisSize.min,
+                            //   mainAxisAlignment: MainAxisAlignment.center,
+                            //   crossAxisAlignment: CrossAxisAlignment.center,
+                            //   children: [
+                            //     _buildRichText(isWideScreen,
+                            //         constraints.maxWidth - 50, 300),
+                            //   ],
+                            // ),
+                          ],
+                        ),
                       ),
                     ),
             ),
@@ -124,7 +135,7 @@ class SampleItemListView extends StatelessWidget {
         textAlign: isWideScreen ? TextAlign.start : TextAlign.center,
         text: TextSpan(
           text:
-              "Hello — I'm Sergio Cunha, a Senior Software Developer based in São Paulo, Brazil.", // Parte do texto com um estilo
+              "Hello — I'm Sergio Cunha, a Senior Software Developer based in São Paulo, Brazil.",
           style: GoogleFonts.comfortaa(
             fontSize: 13,
             color: Colors.white,
