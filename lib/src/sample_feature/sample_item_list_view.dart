@@ -1,6 +1,9 @@
+import 'dart:js' as js;
+
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_animate_on_scroll/flutter_animate_on_scroll.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/material.dart';
 
 class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
@@ -178,8 +181,8 @@ class SampleItemListView extends StatelessWidget {
             fontStyle: FontStyle.italic,
             height: 1.8,
           ),
-          children: const [
-            TextSpan(
+          children: [
+            const TextSpan(
               text:
                   " With solid experience in backend, I'm now exploring the world of frontend development using Flutter. My goal is to craft seamless user experiences by merging solid backend logic with clean, responsive interfaces. ",
               style: TextStyle(
@@ -190,7 +193,16 @@ class SampleItemListView extends StatelessWidget {
             ),
             TextSpan(
               text: 'Find out a little more about my journey.',
-              style: TextStyle(
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  js.context.callMethod(
+                    'open',
+                    [
+                      'https://www.linkedin.com/in/sergio-cunha-2171a6103/',
+                    ],
+                  );
+                },
+              style: const TextStyle(
                 color: Colors.white54,
                 decoration: TextDecoration.underline,
               ),
