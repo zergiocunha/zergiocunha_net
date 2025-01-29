@@ -10,6 +10,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  auto_size_text: ^3.0.0
   flutter:
     sdk: flutter
   flutter_animate_on_scroll: ^0.3.0
