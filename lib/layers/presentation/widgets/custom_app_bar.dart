@@ -15,90 +15,152 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     if (isWideScreen == true) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0),
-        child: AppBar(
-          backgroundColor: AppColors.pastelDarkBlue,
-          actions: [
-            Row(
-              children: [
-                AppTextButton(
-                  text: "Home",
-                  onPressed: () {
-                    print("Home");
-                  },
-                ),
-                const SizedBox(width: 20),
-                AppTextButton(
-                  text: "About Me",
-                  onPressed: () {
-                    print("About Me");
-                  },
-                ),
-                const SizedBox(width: 20),
-                AppTextButton(
-                  text: "Work",
-                  onPressed: () {
-                    print("Work");
-                  },
-                ),
-                const SizedBox(width: 20),
-                AppTextButton(
-                  text: "Contact",
-                  onPressed: () {
-                    print("Contact");
-                  },
-                ),
-              ],
-            ),
-          ],
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+      return SliverAppBar(
+        floating: true,
+        snap: true,
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        actions: [
+          Row(
             children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.business_center_outlined,
-                  color: AppColors.blue,
-                ),
-                color: AppColors.blue,
+              AppTextButton(
+                text: "Home",
                 onPressed: () {
-                  print("Menu");
+                  print("Home");
                 },
               ),
-              const SizedBox(width: 10),
-              Text(
-                "Sergio Cunha",
-                style: AppTextStyles.headline2,
+              const SizedBox(width: 20),
+              AppTextButton(
+                text: "About Me",
+                onPressed: () {
+                  print("About Me");
+                },
+              ),
+              const SizedBox(width: 20),
+              AppTextButton(
+                text: "Work",
+                onPressed: () {
+                  print("Work");
+                },
+              ),
+              const SizedBox(width: 20),
+              AppTextButton(
+                text: "Contact",
+                onPressed: () {
+                  print("Contact");
+                },
               ),
             ],
           ),
-        ),
-      );
-    } else {
-      return Padding(
-        padding: const EdgeInsets.only(right: 40.0),
-        child: AppBar(
-          backgroundColor: AppColors.pastelDarkBlue,
-          actions: const [
-            Icon(
-              color: AppColors.white,
-              Icons.menu,
-            ),
-          ],
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
+        ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IconButton(
+              icon: const Icon(
                 Icons.business_center_outlined,
                 color: AppColors.blue,
               ),
-              const SizedBox(width: 10),
-              Text(
-                "Sergio Cunha",
-                style: AppTextStyles.headline2,
+              color: AppColors.blue,
+              onPressed: () {
+                print("Menu");
+              },
+            ),
+            const SizedBox(width: 10),
+            Text(
+              "Sergio Cunha",
+              style: AppTextStyles.headline2,
+            ),
+          ],
+        ),
+      );
+    } else {
+      return SliverAppBar(
+        floating: true,
+        snap: true,
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        actions: [
+          DropdownButton<String>(
+            dropdownColor: AppColors.pastelDarkBlue,
+            style: AppTextStyles.bodyText2Blue,
+            underline: Container(),
+            items: [
+              DropdownMenuItem(
+                value: "Home",
+                child: TextButton(
+                  onPressed: () {
+                    print("Home");
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Home",
+                    style: AppTextStyles.bodyText2Blue,
+                  ),
+                ),
+              ),
+              DropdownMenuItem(
+                value: "About Me",
+                child: TextButton(
+                  onPressed: () {
+                    print("About Me");
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "About Me",
+                    style: AppTextStyles.bodyText2Blue,
+                  ),
+                ),
+              ),
+              DropdownMenuItem(
+                value: "Work",
+                child: TextButton(
+                  onPressed: () {
+                    print("Work");
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Work",
+                    style: AppTextStyles.bodyText2Blue,
+                  ),
+                ),
+              ),
+              DropdownMenuItem(
+                value: "Contact",
+                child: TextButton(
+                  onPressed: () {
+                    print("Contact");
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Contact",
+                    style: AppTextStyles.bodyText2Blue,
+                  ),
+                ),
               ),
             ],
+            icon: const Icon(
+              Icons.menu,
+              color: AppColors.white,
+            ),
+            onChanged: (String? newValue) {
+              print("Menu");
+            },
           ),
+        ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.business_center_outlined,
+              color: AppColors.blue,
+            ),
+            const SizedBox(width: 10),
+            Text(
+              "Sergio Cunha",
+              style: AppTextStyles.headline2,
+            ),
+          ],
         ),
       );
     }
