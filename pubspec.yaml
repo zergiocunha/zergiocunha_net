@@ -17,7 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   google_fonts: ^6.2.1
-  js: ^0.7.1
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +34,4 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/cv/Profile.pdf
