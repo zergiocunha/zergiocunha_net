@@ -1,29 +1,37 @@
-# zergiocunha_net
+# Nome_do_Projeto
 
-A new Flutter project.
+Um novo projeto Flutter.
 
-## Getting Started
+## Introdução
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/to/state-management-sample).
+Este projeto é um ponto de partida para uma aplicação Flutter que segue o
+tutorial de gerenciamento de estado simples.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para obter ajuda sobre como começar com o desenvolvimento Flutter, veja a
+documentação online, que oferece tutoriais,
+exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.
+
+## Ambientes
+
+- **DEV**: https://zergiocunha-dev--dev-0v82oxku.web.app/
+- **QAS**: https://zergiocunha-dev--qas-chle7ozc.web.app/
+- **PRD**: https://zergiocunha-dev.web.app/
+
+## Versão do Flutter
+
+Este projeto utiliza a versão do Flutter: **3.27.3**
 
 ## Assets
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
+O diretório `assets` abriga imagens, fontes e quaisquer outros arquivos que você queira
+incluir na sua aplicação.
 
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/to/resolution-aware-images).
+O diretório `assets/images` contém imagens sensíveis à resolução.
 
-## Localization
+## Localização
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+Este projeto gera mensagens localizadas com base em arquivos arb encontrados no
+diretório `lib/src/localization`.
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter apps](https://flutter.dev/to/internationalization).
+Para suportar idiomas adicionais, por favor visite o tutorial sobre
+Internacionalização de apps Flutter.
