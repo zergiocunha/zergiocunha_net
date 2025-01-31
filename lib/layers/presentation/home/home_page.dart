@@ -16,7 +16,6 @@ class HomePage extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         bool isWideScreen = constraints.maxWidth >= 900;
-
         return Scaffold(
           backgroundColor: AppColors.pastelDarkBlue,
           body: isWideScreen

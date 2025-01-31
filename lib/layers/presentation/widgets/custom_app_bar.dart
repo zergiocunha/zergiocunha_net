@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     if (isWideScreen == true) {
       return SliverAppBar(
-        floating: true,
+        floating: false,
         snap: true,
         centerTitle: true,
         backgroundColor: Colors.transparent,
