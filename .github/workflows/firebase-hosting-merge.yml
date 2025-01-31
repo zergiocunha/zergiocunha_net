@@ -71,16 +71,24 @@ jobs:
 
       - name: Create Pull Request to Development
         if: startsWith(github.ref, 'refs/heads/feature/') || startsWith(github.ref, 'refs/heads/fix/') || startsWith(github.ref, 'refs/heads/wip/')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr create --base development --head ${{ github.ref }} --title "Merge ${{ github.ref }} into development" --body "Automated PR to merge ${{ github.ref }} into development"
 
       - name: Create Pull Request to Main (Hotfix)
         if: startsWith(github.ref, 'refs/heads/hotfix/')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr create --base main --head ${{ github.ref }} --title "Merge ${{ github.ref }} into main" --body "Automated PR to merge ${{ github.ref }} into main"
 
       - name: Create Pull Request to QAS (From Development)
         if: github.ref == 'refs/heads/development'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr create --base qas --head development --title "Merge development into qas" --body "Automated PR to merge development into qas"
 
       - name: Create Pull Request to Main (From QAS)
         if: github.ref == 'refs/heads/qas'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr create --base main --head qas --title "Merge qas into main" --body "Automated PR to merge qas into main"
