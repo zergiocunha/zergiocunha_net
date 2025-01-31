@@ -27,6 +27,7 @@ class WideScreenLayout extends StatelessWidget {
         padding: const EdgeInsets.only(top: 50),
         child: ListView(
           children: [
+            const Text("DEV"),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
