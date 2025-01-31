@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:zergiocunha_net/layers/presentation/home/actions/download_cv.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 import '../../app_colors.dart';
 import '../../app_text_styles.dart';
@@ -8,6 +10,14 @@ class SocialMediaButtonsRow extends StatelessWidget {
   const SocialMediaButtonsRow({
     super.key,
   });
+
+  void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +59,7 @@ class SocialMediaButtonsRow extends StatelessWidget {
           const SizedBox(width: 20),
           InkWell(
             onTap: () {
-              print("LinkedIn");
+              _launchURL('https://www.linkedin.com/in/sergio-cunha-2171a6103/');
             },
             borderRadius: const BorderRadius.all(
               Radius.circular(60),
@@ -71,7 +81,7 @@ class SocialMediaButtonsRow extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
-                  Icons.person_outline,
+                  EvaIcons.linkedinOutline,
                   color: AppColors.blue,
                 ),
               ),
@@ -80,7 +90,7 @@ class SocialMediaButtonsRow extends StatelessWidget {
           const SizedBox(width: 20),
           InkWell(
             onTap: () {
-              print("Github");
+              _launchURL('https://github.com/zergiocunha');
             },
             borderRadius: const BorderRadius.all(
               Radius.circular(60),
@@ -102,7 +112,7 @@ class SocialMediaButtonsRow extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(
-                  Icons.access_alarm,
+                  EvaIcons.githubOutline,
                   color: AppColors.blue,
                 ),
               ),
