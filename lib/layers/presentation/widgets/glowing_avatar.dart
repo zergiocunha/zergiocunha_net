@@ -19,7 +19,7 @@ class _GlowingAvatarState extends State<GlowingAvatar>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(seconds: 2),
     )..repeat(
         reverse: true,
       );
@@ -47,14 +47,14 @@ class _GlowingAvatarState extends State<GlowingAvatar>
             ),
             boxShadow: [
               BoxShadow(
-                color: AppColors.blue.withOpacity(0.6),
+                color: AppColors.blue.withOpacity(0.8),
                 blurRadius: glowIntensity, // Faz o brilho pulsar
-                spreadRadius: glowIntensity / 2, // Expande o brilho para fora
+                spreadRadius: glowIntensity / 15, // Expande o brilho para fora
               ),
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(5.0),
             child: CircleAvatar(
               backgroundImage: const AssetImage(
                 'assets/images/profile.jpg',
