@@ -17,24 +17,23 @@ class HomePage extends StatelessWidget {
       builder: (context, constraints) {
         bool isWideScreen = constraints.maxWidth >= 900;
         return Scaffold(
+          extendBodyBehindAppBar: true,
           backgroundColor: AppColors.pastelDarkBlue,
           body: isWideScreen
               ? Padding(
                   padding: const EdgeInsets.only(
-                    left: 10,
-                    right: 10,
                     bottom: 20,
                   ),
-                  child: WideScreenLayout(isWideScreen: isWideScreen),
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 1350),
+                      child: WideScreenLayout(
+                        isWideScreen: isWideScreen,
+                      ),
+                    ),
+                  ),
                 )
-              : Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
-                  ),
-                  child: MobileLayout(isWideScreen: isWideScreen),
-                ),
+              : MobileLayout(isWideScreen: isWideScreen),
         );
       },
     );
