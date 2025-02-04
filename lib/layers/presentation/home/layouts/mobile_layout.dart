@@ -23,15 +23,22 @@ class MobileLayout extends StatelessWidget {
           ),
         ];
       },
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: ListView(
-          children: [
-            const GlowingAvatar(
-              radius: 200,
+      body: ListView(
+        children: [
+          const SizedBox(
+            height: 50,
+          ),
+          const GlowingAvatar(
+            radius: 150,
+          ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 30,
+              right: 30,
+              bottom: 20,
             ),
-            const SizedBox(height: 40),
-            Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -43,12 +50,14 @@ class MobileLayout extends StatelessWidget {
                 RichText(
                   textAlign: TextAlign.center,
                   text: TextSpan(
-                    text: "Hello, I`m\n",
+                    text: "Hello, I'm\n",
                     style: AppTextStyles.bodyText1,
                     children: [
                       TextSpan(
                         text: "Sergio Cunha",
-                        style: AppTextStyles.bodyText1blue,
+                        style: AppTextStyles.bodyText1blue.copyWith(
+                          height: 0.95,
+                        ),
                       ),
                     ],
                   ),
@@ -73,11 +82,13 @@ class MobileLayout extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const SocialMediaButtonsRow(),
+                SocialMediaButtonsRow(
+                  isWidescreen: isWideScreen,
+                ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

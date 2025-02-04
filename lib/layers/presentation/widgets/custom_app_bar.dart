@@ -1,9 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, use_build_context_synchronously
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
 import '../app_colors.dart';
 import '../app_text_styles.dart';
 import 'app_text_button.dart';
+import 'custom_alert_dialog.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? isWideScreen;
@@ -15,9 +17,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     if (isWideScreen == true) {
-      return SliverAppBar(
-        floating: false,
-        snap: true,
+      return AppBar(
+        elevation: 0,
         centerTitle: true,
         backgroundColor: Colors.transparent,
         actions: [
@@ -25,29 +26,77 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               AppTextButton(
                 text: "Home",
-                onPressed: () {
-                  print("Home");
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (_) {
+                      return CustomAlertDialog(
+                        contentText: "Under Development",
+                        icon: Icons.construction,
+                        iconButton: EvaIcons.checkmark,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  );
                 },
               ),
               const SizedBox(width: 20),
               AppTextButton(
                 text: "About Me",
-                onPressed: () {
-                  print("About Me");
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (_) {
+                      return CustomAlertDialog(
+                        contentText: "Under Development",
+                        icon: Icons.construction,
+                        iconButton: EvaIcons.checkmark,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  );
                 },
               ),
               const SizedBox(width: 20),
               AppTextButton(
                 text: "Work",
-                onPressed: () {
-                  print("Work");
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (_) {
+                      return CustomAlertDialog(
+                        contentText: "Under Development",
+                        icon: Icons.construction,
+                        iconButton: EvaIcons.checkmark,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  );
                 },
               ),
               const SizedBox(width: 20),
               AppTextButton(
                 text: "Contact",
-                onPressed: () {
-                  print("Contact");
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (_) {
+                      return CustomAlertDialog(
+                        contentText: "Under Development",
+                        icon: Icons.construction,
+                        iconButton: EvaIcons.checkmark,
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  );
                 },
               ),
             ],
@@ -76,22 +125,36 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       );
     } else {
       return SliverAppBar(
-        floating: true,
-        snap: true,
-        centerTitle: true,
         backgroundColor: Colors.transparent,
         actions: [
           DropdownButton<String>(
-            dropdownColor: AppColors.pastelDarkBlue,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(
+                30,
+              ),
+            ),
+            dropdownColor: AppColors.darkBlue,
             style: AppTextStyles.bodyText2Blue,
             underline: Container(),
             items: [
               DropdownMenuItem(
                 value: "Home",
                 child: TextButton(
-                  onPressed: () {
-                    print("Home");
+                  onPressed: () async {
                     Navigator.pop(context);
+                    await showDialog(
+                      context: context,
+                      builder: (_) {
+                        return CustomAlertDialog(
+                          contentText: "Under Development",
+                          icon: Icons.construction,
+                          iconButton: EvaIcons.checkmark,
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        );
+                      },
+                    );
                   },
                   child: Text(
                     "Home",
@@ -102,9 +165,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               DropdownMenuItem(
                 value: "About Me",
                 child: TextButton(
-                  onPressed: () {
-                    print("About Me");
+                  onPressed: () async {
                     Navigator.pop(context);
+                    await showDialog(
+                      context: context,
+                      builder: (_) {
+                        return CustomAlertDialog(
+                          contentText: "Under Development",
+                          icon: Icons.construction,
+                          iconButton: EvaIcons.checkmark,
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        );
+                      },
+                    );
                   },
                   child: Text(
                     "About Me",
@@ -115,9 +190,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               DropdownMenuItem(
                 value: "Work",
                 child: TextButton(
-                  onPressed: () {
-                    print("Work");
+                  onPressed: () async {
                     Navigator.pop(context);
+                    await showDialog(
+                      context: context,
+                      builder: (_) {
+                        return CustomAlertDialog(
+                          contentText: "Under Development",
+                          icon: Icons.construction,
+                          iconButton: EvaIcons.checkmark,
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        );
+                      },
+                    );
                   },
                   child: Text(
                     "Work",
@@ -128,9 +215,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               DropdownMenuItem(
                 value: "Contact",
                 child: TextButton(
-                  onPressed: () {
-                    print("Contact");
+                  onPressed: () async {
                     Navigator.pop(context);
+                    await showDialog(
+                      context: context,
+                      builder: (_) {
+                        return CustomAlertDialog(
+                          contentText: "Under Development",
+                          icon: Icons.construction,
+                          iconButton: EvaIcons.checkmark,
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        );
+                      },
+                    );
                   },
                   child: Text(
                     "Contact",
@@ -147,9 +246,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               print("Menu");
             },
           ),
+          const SizedBox(width: 10),
         ],
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(
               Icons.business_center_outlined,
