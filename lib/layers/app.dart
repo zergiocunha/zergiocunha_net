@@ -11,6 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Sergio Cunha",
       restorationScopeId: 'app',
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -21,8 +22,7 @@ class App extends StatelessWidget {
       supportedLocales: const [
         Locale('en', ''),
       ],
-      onGenerateTitle: (BuildContext context) =>
-          AppLocalizations.of(context)!.appTitle,
+      onGenerateTitle: (BuildContext context) => "Sergio Cunha",
       home: const HomePage(),
     );
   }
