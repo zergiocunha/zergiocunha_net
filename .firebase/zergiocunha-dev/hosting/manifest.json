@@ -1,11 +1,11 @@
 {
-    "name": "zergiocunha_net",
-    "short_name": "zergiocunha_net",
+    "name": "Sergio Cunha",
+    "short_name": "Sergio Cunha",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Tech with Purpose",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

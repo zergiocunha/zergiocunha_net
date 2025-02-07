@@ -107,7 +107,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             IconButton(
               icon: const Icon(
-                Icons.business_center_outlined,
+                EvaIcons.moonOutline,
                 color: AppColors.blue,
               ),
               color: AppColors.blue,
@@ -252,7 +252,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(
-              Icons.business_center_outlined,
+              EvaIcons.moonOutline,
               color: AppColors.blue,
             ),
             const SizedBox(width: 10),
